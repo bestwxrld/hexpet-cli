@@ -1,0 +1,12 @@
+{
+  "name": "hexpet-cli",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Task manager with timer and virtual pet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
