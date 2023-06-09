@@ -9,8 +9,8 @@ const rl = readline.createInterface({
 const todoList = [];
 
 function addTask(task) {
-  // запушить задачу в список
-  // вывести сообщение
+  todoList.push(task);
+  console.log(`Задача «${task}» добавлена в список.`);
 };
 
 function removeTask(index) {
