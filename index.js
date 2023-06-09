@@ -27,7 +27,8 @@ function showTasks() {
 };
 
 function clearTasks() {
-  // очистить список через splice
+  todoList.splice(0, todoList.length);
+  console.log('Список дел очищен.');
 };
 
 function commandHandler(command) {
