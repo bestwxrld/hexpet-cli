@@ -10,13 +10,13 @@ const todoList = [];
 
 function addTask(task) {
   todoList.push(task);
-  console.log(`Задача «${task}» добавлена в список.`);
+  console.log(`Задача "${task}" добавлена в список.`);
 };
 
 function removeTask(index) {
   if (index >= 0 && index < todoList.length) {
     const removedTask = todoList.splice(index, 1);
-    console.log(`Задача «${removeTask}» удалена из списка.`)
+    console.log(`Задача "${removedTask}" удалена из списка.`)
   } else {
     console.log('Недопустимый индекс задачи.');
   }
@@ -72,15 +72,15 @@ function startCli() {
   rl.setPrompt('Введите команду: ');
   rl.prompt();
 
-  rl.on('line', (imput) => {
+  rl.on('line', (input) => {
     commandHandler(input.trim());
     rl.prompt();
   });
 
   rl.on('close', () => {
     console.log('До свидания!');
-    rl.close();
-  })
+    process.exit(0);
+  });
 };
 
 startCli();
