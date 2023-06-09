@@ -39,10 +39,30 @@ function clearTasks() {
 };
 
 function commandHandler(command) {
-  // разбить переданную команду на элементы массива
-  // вытащить команду по 0 индексу
+  const parts = command.split(' ');
+  const action = parts[0];
 
-  // через swith-case вызвать нужную функуцю
+  switch (action) {
+    case 'add':
+      const task = parts.slice(1).join(' ');
+      addTask(task);
+      break;
+    case 'remove':
+      const index = parseInt(parts[1], 10);
+      removeTask(index);
+      break;
+    case 'list':
+      showTasks();
+      break;
+    case 'clear':
+      clearTasks();
+      break;
+    case 'exit':
+      rl.close();
+      break;
+    default:
+      console.log('Недопустимая команда. Доступные команды: add, remove, list, clear, exit.');
+  }
 };
 
 function startCli() {
