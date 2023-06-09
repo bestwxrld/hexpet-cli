@@ -23,7 +23,14 @@ function removeTask(index) {
 };
 
 function showTasks() {
-  // пройтись циклом и вывести красивый список 1. Задача
+  console.log('Список задач:');
+  if (todoList.lenth === 0) {
+    console.log('Список задач пуст.');
+  } else {
+    for (let i = 0; i < todoList.length; i += 1) {
+      console.log(`${i}. ${todoList[i]}`);
+    }
+  }
 };
 
 function clearTasks() {
@@ -40,7 +47,7 @@ function commandHandler(command) {
 
 function startCli() {
   console.log('Добро пожаловать в HexPet!');
-  console.log('Доступные команды: add, remove, list, clear, exit');
+  console.log('Доступные команды: add, remove, list, clear, exit\n');
 
   rl.setPrompt('Введите команду: ');
   rl.prompt();
