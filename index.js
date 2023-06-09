@@ -11,16 +11,16 @@ const todoList = [];
 function addTask(task) {
   todoList.push(task);
   console.log(`Задача "${task}" добавлена в список.`);
-};
+}
 
 function removeTask(index) {
   if (index >= 0 && index < todoList.length) {
     const removedTask = todoList.splice(index, 1);
-    console.log(`Задача "${removedTask}" удалена из списка.`)
+    console.log(`Задача "${removedTask}" удалена из списка.`);
   } else {
     console.log('Недопустимый индекс задачи.');
   }
-};
+}
 
 function showTasks() {
   console.log('Список задач:');
@@ -31,24 +31,24 @@ function showTasks() {
       console.log(`${i}. ${todoList[i]}`);
     }
   }
-};
+}
 
 function clearTasks() {
   todoList.splice(0, todoList.length);
   console.log('Список дел очищен.');
-};
+}
 
 function commandHandler(command) {
   const parts = command.split(' ');
   const action = parts[0];
+  const task = parts.slice(1).join(' ');
+  const index = parseInt(parts[1], 10);
 
   switch (action) {
     case 'add':
-      const task = parts.slice(1).join(' ');
       addTask(task);
       break;
     case 'remove':
-      const index = parseInt(parts[1], 10);
       removeTask(index);
       break;
     case 'list':
@@ -63,7 +63,7 @@ function commandHandler(command) {
     default:
       console.log('Недопустимая команда. Доступные команды: add, remove, list, clear, exit.');
   }
-};
+}
 
 function startCli() {
   console.log('Добро пожаловать в HexPet!');
@@ -81,6 +81,6 @@ function startCli() {
     console.log('До свидания!');
     process.exit(0);
   });
-};
+}
 
 startCli();
