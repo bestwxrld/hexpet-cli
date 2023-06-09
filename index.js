@@ -14,8 +14,12 @@ function addTask(task) {
 };
 
 function removeTask(index) {
-  // удалить задачу по индексу через splice
-  // вывести сообщение
+  if (index >= 0 && index < todoList.length) {
+    const removedTask = todoList.splice(index, 1);
+    console.log(`Задача «${removeTask}» удалена из списка.`)
+  } else {
+    console.log('Недопустимый индекс задачи.');
+  }
 };
 
 function showTasks() {
