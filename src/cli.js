@@ -1,5 +1,5 @@
 import readline from 'readline';
-import { commandHandler } from './todo.js';
+import commandHandler from './todo.js';
 
 export const rl = readline.createInterface({
   input: process.stdin,

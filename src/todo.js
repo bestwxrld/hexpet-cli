@@ -1,4 +1,4 @@
-import { rl } from "./cli.js";
+import { rl } from './cli.js';
 
 const todoList = [];
 
@@ -35,7 +35,7 @@ function clearTasks() {
   console.log('Список дел очищен.\n');
 }
 
-export function commandHandler(command) {
+export default function commandHandler(command) {
   const parts = command.split(' ');
   const action = parts[0];
   const task = parts.slice(1).join(' ');
