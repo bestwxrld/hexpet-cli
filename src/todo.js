@@ -1,4 +1,4 @@
-import { rl } from "../index.js";
+import { rl } from "./cli.js";
 
 const todoList = [];
 
