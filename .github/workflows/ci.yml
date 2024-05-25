@@ -1,4 +1,4 @@
-name: ESLint
+name: CI
 on: 
   push:
     branches:
@@ -12,12 +12,8 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '22'
     - name: Install ESLint
-      run: 
+      run: |
         npm install eslint@^8.42.0
         npm install eslint-config-airbnb-base@^15.0.0
     - name: Run ESLint
